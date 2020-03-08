@@ -1,42 +1,21 @@
 /**
-    * Given an array A[] and a number x, check for pair in A[] with sum as x
-    * Write a program that, given an array A[] of n numbers and another number x, 
+    * Write a program that, given an array Arr[] of n numbers and another number x, 
     * determines whether or not there exist two elements in S whose sum is exactly x.
-    * This solution has complexity O(nlogn)
-    * You can improve complexity using hash table till O(n)
+    * 1. With complexity O(nlogn)
+    * 2. With complexity O(n)
 */
 
 #include <iostream>
 #include <algorithm>
 #include <unordered_set>
 
-/**
-    * This will print all the
-    * Pairs of array which has
-    * sum equal to 15
-*/
-void HasPairImprove(int arr[], int n, int sum)
-{
-    std::unordered_set<int> myset;
-    
-    for(int i = 0; i<n; i++)
-    {
-        int subsum = sum - arr[i];
-        if(subsum > 0 && myset.find(subsum) != myset.end())
-        {
-            std::cout<<"( "<<subsum<<", "<<arr[i]<<" )\n";
-        }
-        myset.insert(arr[i]);
-    }
-}
-
 
 /**
-    * This will return true
-    * Pairs of array which has
+    * 1. With complexity O(nlogn)
+    * This will return true pairs of array which has
     * sum equal to 15
 */
-bool hasPair(int arr[], int n, int sum)
+bool hasPairWith_nLogn_Complexity(int arr[], int n, int sum)
 {
     /* Sort the array */
     std::sort(arr, arr + n);
@@ -63,6 +42,26 @@ bool hasPair(int arr[], int n, int sum)
     return false; /* Return false */
 }
 
+/**
+    * 2. With complexity O(n)
+    * This will print all the pairs of array which has
+    * sum equal to 15
+*/
+void hasPairWith_n_Complexity(int arr[], int n, int sum)
+{
+    std::unordered_set<int> myset;
+    
+    for(int i = 0; i<n; i++)
+    {
+        int subsum = sum - arr[i];
+        if(subsum > 0 && myset.find(subsum) != myset.end())
+        {
+            std::cout<<"( "<<subsum<<", "<<arr[i]<<" )\n";
+        }
+        myset.insert(arr[i]);
+    }
+}
+
 int main(int argc, char **argv)
 {
     /* Array List */
@@ -73,17 +72,17 @@ int main(int argc, char **argv)
     // Given Sum
     int sum = 15;
     
-    if(hasPair(arr, arrSize, sum))
+    if(hasPairWith_nLogn_Complexity(arr, arrSize, sum))
     {
-        std::cout<<"Pair exist\n";
+        std::cout<<"Output using complexity of O(nLogn): Pair exist.\n";
     }
     else
     {
-        std::cout<<"Pair does not exist\n";
+        std::cout<<"Output using complexity of O(nLogn): Pair does not exist\n";
     }
 
-    std::cout<<"This output with complexity of O(n):-\n";
-    HasPairImprove(arr, arrSize, sum);
+    std::cout<<"Output using complexity of O(n):-\n";
+    hasPairWith_n_Complexity(arr, arrSize, sum);
      
     return 0;
 }
