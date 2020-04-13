@@ -66,10 +66,8 @@ int main(int argc, char **argv)
 {
     /* Array List */
     int arr[] = {3, 6, 7, 8, 9, 10};
-
     int arrSize = sizeof(arr)/sizeof(arr[0]);
     
-    // Given Sum
     int sum = 15;
     
     if(hasPairWith_nLogn_Complexity(arr, arrSize, sum))
