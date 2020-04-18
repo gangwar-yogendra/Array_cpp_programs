@@ -1,4 +1,4 @@
-/**
+/** 
 * Maximum sum such that no two elements are adjacent
 
 * Given an array of positive numbers, find the maximum sum of a 
