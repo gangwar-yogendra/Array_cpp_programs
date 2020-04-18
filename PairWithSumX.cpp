@@ -1,4 +1,4 @@
-/**    
+/** 
 Given an array A[] and a number x, check for pair in A[] with sum as x
 
 Write a program that, given an array A[] of n numbers and another number x, 
