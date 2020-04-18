@@ -1,4 +1,4 @@
-/*
+/**
 * Maximum sum such that no two elements are adjacent
 
 * Given an array of positive numbers, find the maximum sum of a 
@@ -16,7 +16,7 @@
 
 * Input : arr[] = {1, 20, 3}
 * Output : 20
-*/
+**/
 
 #include <iostream>
 
